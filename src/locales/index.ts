@@ -5,6 +5,7 @@ import { useAppStoreWithOut } from '@/store/modules/app'
 import enUS from './en-US.json'
 import jaJP from './ja-JP.json'
 import koKR from './ko-KR.json'
+import ptBR from './pt-BR.json'
 import zhCN from './zh-CN.json'
 import zhTW from './zh-TW.json'
 
@@ -26,6 +27,7 @@ const i18n = createI18n<[MessageSchema], Language>({
     'zh-CN': zhCN,
     'zh-TW': zhTW,
     'ko-KR': koKR,
+    'pt-BR': ptBR,
   },
 })
 

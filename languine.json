@@ -3,10 +3,6 @@
   "locale": {
     "source": "en-US",
     "targets": [
-      "ja-JP",
-      "ko-KR",
-      "zh-CN",
-      "zh-TW",
       "pt-BR"
     ]
   },
