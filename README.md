@@ -2,7 +2,6 @@
 
 [中文](./README.md) | [English](./README.en.md)
 
-
 ## 说明
 
 > [!IMPORTANT]
@@ -38,7 +37,6 @@
 
 [✓] 上下文窗口控制
 
-
 > [!CAUTION]
 > 声明：此项目只发布于 Github，基于 MIT 协议，免费且作为开源学习使用。并且不会有任何形式的卖号、付费服务、讨论群、讨论组等行为。谨防受骗。
 
@@ -56,41 +54,42 @@
 ![giftcarddb](./docs/giftcard_db_design.png)
 
 - [ChatGPT Web](#chatgpt-web)
-	- [介绍](#介绍)
-	- [待实现路线](#待实现路线)
-	- [前置要求](#前置要求)
-		- [Node](#node)
-		- [PNPM](#pnpm)
-		- [填写密钥](#填写密钥)
-	- [安装依赖](#安装依赖)
-		- [后端](#后端)
-		- [前端](#前端)
-	- [测试环境运行](#测试环境运行)
-		- [后端服务](#后端服务)
-		- [前端网页](#前端网页)
-	- [环境变量](#环境变量)
-	- [打包](#打包)
-		- [使用 Docker](#使用-docker)
-			- [Docker 参数示例](#docker-参数示例)
-			- [Docker build \& Run](#docker-build--run)
-			- [Docker compose](#docker-compose)
-			- [防止爬虫抓取](#防止爬虫抓取)
-		- [使用 Railway 部署](#使用-railway-部署)
-			- [Railway 环境变量](#railway-环境变量)
-		- [手动打包](#手动打包)
-			- [后端服务](#后端服务-1)
-			- [前端网页](#前端网页-1)
-	- [Auth Proxy Mode](#auth-proxy-mode)
-	- [Web Search 网络搜索功能](#web-search-网络搜索功能)
-		- [功能特性](#功能特性)
-		- [配置方式](#配置方式)
-		- [使用方式](#使用方式)
-		- [技术实现](#技术实现)
-		- [注意事项](#注意事项)
-	- [常见问题](#常见问题)
-	- [参与贡献](#参与贡献)
-	- [赞助](#赞助)
-	- [License](#license)
+ 	- [介绍](#介绍)
+ 	- [待实现路线](#待实现路线)
+ 	- [前置要求](#前置要求)
+  		- [Node](#node)
+  		- [PNPM](#pnpm)
+  		- [填写密钥](#填写密钥)
+ 	- [安装依赖](#安装依赖)
+  		- [后端](#后端)
+  		- [前端](#前端)
+ 	- [测试环境运行](#测试环境运行)
+  		- [后端服务](#后端服务)
+  		- [前端网页](#前端网页)
+ 	- [环境变量](#环境变量)
+ 	- [打包](#打包)
+  		- [使用 Docker](#使用-docker)
+   			- [Docker 参数示例](#docker-参数示例)
+   			- [Docker build \& Run](#docker-build--run)
+   			- [Docker compose](#docker-compose)
+   			- [防止爬虫抓取](#防止爬虫抓取)
+  		- [使用 Railway 部署](#使用-railway-部署)
+   			- [Railway 环境变量](#railway-环境变量)
+  		- [手动打包](#手动打包)
+   			- [后端服务](#后端服务-1)
+   			- [前端网页](#前端网页-1)
+ 	- [Auth Proxy Mode](#auth-proxy-mode)
+ 	- [Web Search 网络搜索功能](#web-search-网络搜索功能)
+  		- [功能特性](#功能特性)
+  		- [配置方式](#配置方式)
+  		- [使用方式](#使用方式)
+  		- [技术实现](#技术实现)
+  		- [注意事项](#注意事项)
+ 	- [常见问题](#常见问题)
+ 	- [参与贡献](#参与贡献)
+ 	- [赞助](#赞助)
+ 	- [License](#license)
+
 ## 介绍
 
 使用官方 `OpenAI API` 访问 `ChatGPT`：
@@ -98,10 +97,12 @@
 `ChatGPTAPI` 使用 `gpt-4.1` 通过 `OpenAI` 官方 `API` 调用 `ChatGPT`（需要 API 密钥）。
 
 警告：
+
 1. 使用 `API` 时，如果网络不通，那是国内被墙了，你需要自建代理，绝对不要使用别人的公开代理，那是危险的。
 2. 把项目发布到公共网络时，你应该设置 `AUTH_SECRET_KEY` 变量添加你的密码访问权限，你也应该修改 `index.html` 中的 `title`，防止被关键词搜索到。
 
 设置方式：
+
 1. 进入 `service/.env.example` 文件，复制内容到 `service/.env` 文件
 2. 填写 `OPENAI_API_KEY` 字段 [(获取 apiKey)](https://platform.openai.com/overview)
 
@@ -114,6 +115,7 @@
 ```
 
 ## 待实现路线
+
 [✓] 双模型
 
 [✓] 多会话储存和上下文逻辑
@@ -149,12 +151,15 @@ node -v
 ```
 
 ### PNPM
+
 如果你没有安装过 `pnpm`
+
 ```shell
 npm install pnpm -g
 ```
 
 ### 填写API密钥
+
 获取 `OpenAI API Key` 并填写本地环境变量 [跳转](#介绍)
 
 ```
@@ -177,12 +182,15 @@ pnpm install
 ```
 
 ### 前端
+
 根目录下运行以下命令
+
 ```shell
 pnpm bootstrap
 ```
 
 ## 测试环境运行
+
 ### 后端服务
 
 进入文件夹 `/service` 运行以下命令
@@ -192,7 +200,9 @@ pnpm start
 ```
 
 ### 前端网页
+
 根目录下运行以下命令
+
 ```shell
 pnpm dev
 ```
@@ -305,6 +315,7 @@ services:
 volumes:
   mongodb: {}
 ```
+
 - `OPENAI_API_BASE_URL`  可选，设置 `OPENAI_API_KEY` 时可用
 
 #### 防止爬虫抓取
@@ -320,16 +331,18 @@ volumes:
     }
 ```
 
-###  使用 Railway 部署
+### 使用 Railway 部署
 
 [![Deploy on Railway](https://railway.app/button.svg)](https://railway.app/new/template/yytmgc)
 
-> 参考这个 issue 详细教程  https://github.com/Kerwin1202/chatgpt-web/issues/266
+> 参考这个 issue 详细教程  <https://github.com/Kerwin1202/chatgpt-web/issues/266>
 
 > 注意: `Railway` 修改环境变量会重新 `Deploy`
 
 ### 手动打包
+
 #### 后端服务
+>
 > 如果你不需要本项目的 `node` 接口，可以省略如下操作
 
 复制 `service` 文件夹到你有 `node` 服务环境的服务器上。
@@ -411,12 +424,14 @@ pnpm build
 #### 3. 系统消息模板
 
 **搜索查询提取模板** (用于从用户问题中提取搜索关键词):
+
 ```
 You are a search query extraction assistant. Extract the most relevant search query from user's question and wrap it with <search_query></search_query> tags.
 Current time: {current_time}
 ```
 
 **搜索结果处理模板** (用于处理包含搜索结果的对话):
+
 ```
 You are a helpful assistant with access to real-time web search results. Use the provided search information to give accurate and up-to-date responses.
 Current time: {current_time}
@@ -464,7 +479,6 @@ Current time: {current_time}
 - 每个会话可以独立控制是否使用搜索功能
 - 最大搜索结果数设置会影响搜索的详细程度和 API 费用
 
-
 ## 上下文窗口控制
 
 > [!TIP]
@@ -499,12 +513,14 @@ Current time: {current_time}
 #### 2. 使用场景
 
 **建议开启上下文窗口的情况：**
+
 - 需要连续对话和上下文关联
 - 复杂主题的深入讨论
 - 多轮问答和逐步解决问题
 - 需要 AI 记住之前提到的信息
 
 **建议关闭上下文窗口的情况：**
+
 - 独立的简单问题
 - 避免历史信息干扰新问题
 - 处理不相关的多个主题
@@ -513,6 +529,7 @@ Current time: {current_time}
 #### 3. 管理员配置
 
 管理员可以在系统设置中配置：
+
 - **最大上下文数量**: 设置会话中包含的上下文消息数量
 - **默认状态**: 设置新对话的默认上下文窗口状态
 
@@ -564,19 +581,21 @@ Current time: {current_time}
 
 1. **进入对话界面**: 在支持 VLLM API 的对话会话中
 2. **找到控制开关**: 在对话界面中找到"深度思考"开关按钮
-3. **切换模式**: 
+3. **切换模式**:
    - 开启：模型将进行深度思考，提供更详细和深入的回答
    - 关闭：模型将直接回答，响应更快但可能较为简洁
 
 #### 2. 使用场景
 
 **建议开启深度思考的情况：**
+
 - 复杂问题需要深入分析
 - 需要逻辑推理和多步骤思考
 - 对回答质量要求较高的场景
 - 时间不敏感的情况
 
 **建议关闭深度思考的情况：**
+
 - 简单问题快速回答
 - 需要快速响应的场景
 - 降低计算成本的需求
@@ -596,6 +615,7 @@ Current time: {current_time}
 - **成本考虑**: 开启深度思考通常会增加计算成本和响应时间
 
 ## 常见问题
+
 Q: 为什么 `Git` 提交总是报错？
 
 A: 因为有提交信息验证，请遵循 [Commit 指南](./CONTRIBUTING.md)
@@ -631,17 +651,18 @@ A: 一种可能原因是经过 Nginx 反向代理，开启了 buffer，则 Nginx
 </picture>
 
 ## 赞助
+
 如果你觉得这个项目对你有帮助，请给我点个Star。并且情况允许的话，可以给我一点点支持，总之非常感谢支持～
 
 <div style="display: flex; gap: 20px;">
-	<div style="text-align: center">
-		<img style="width: 200px" src="./docs/wechat.png" alt="微信" />
-		<p>WeChat Pay</p>
-	</div>
-	<div style="text-align: center">
-		<img style="width: 200px" src="./docs/alipay.png" alt="支付宝" />
-		<p>Alipay</p>
-	</div>
+ <div style="text-align: center">
+  <img style="width: 200px" src="./docs/wechat.png" alt="微信" />
+  <p>WeChat Pay</p>
+ </div>
+ <div style="text-align: center">
+  <img style="width: 200px" src="./docs/alipay.png" alt="支付宝" />
+  <p>Alipay</p>
+ </div>
 </div>
 
 ---
@@ -655,4 +676,5 @@ A: 一种可能原因是经过 Nginx 反向代理，开启了 buffer，则 Nginx
 </p>
 
 ## License
+
 [MIT © github.com/chatgpt-web-dev Contributors](./LICENSE)

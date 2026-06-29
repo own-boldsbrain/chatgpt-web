@@ -2,7 +2,6 @@
 
 [中文](./README.md) | [English](./README.en.md)
 
-
 ## Introduction
 
 > [!IMPORTANT]
@@ -16,7 +15,7 @@ Some unique features have been added:
 
 [✓] Register & Login & Reset Password & 2FA
 
-[✓] Sync chat history 
+[✓] Sync chat history
 
 [✓] Front-end page setting apikey
 
@@ -42,6 +41,7 @@ Some unique features have been added:
 > This project is only published on GitHub, based on the MIT license, free and for open source learning usage. And there will be no any form of account selling, paid service, discussion group, discussion group and other behaviors. Beware of being deceived.
 
 ## Screenshots
+>
 > Disclaimer: This project is only released on GitHub, under the MIT License, free and for open-source learning purposes. There will be no account selling, paid services, discussion groups, or forums. Beware of fraud.
 
 ![cover3](./docs/login.jpg)
@@ -56,39 +56,39 @@ Some unique features have been added:
 ![giftcarddb](./docs/giftcard_db_design.png)
 
 - [ChatGPT Web](#chatgpt-web)
-	- [Introduction](#introduction)
-	- [Roadmap](#roadmap)
-	- [Prerequisites](#prerequisites)
-		- [Node](#node)
-		- [PNPM](#pnpm)
-		- [Fill in the Keys](#fill-in-the-keys)
-	- [Install Dependencies](#install-dependencies)
-		- [Backend](#backend)
-		- [Frontend](#frontend)
-	- [Run in Test Environment](#run-in-test-environment)
-		- [Backend Service](#backend-service)
-		- [Frontend Webpage](#frontend-webpage)
-	- [Packaging](#packaging)
-		- [Using Docker](#using-docker)
-			- [Docker Parameter Example](#docker-parameter-example)
-			- [Docker Build \& Run](#docker-build--run)
-			- [Docker Compose](#docker-compose)
-		- [Deployment with Railway](#deployment-with-railway)
-			- [Railway Environment Variables](#railway-environment-variables)
-		- [Manual packaging](#manual-packaging)
-			- [Backend service](#backend-service-1)
-			- [Frontend webpage](#frontend-webpage-1)
-	- [Auth Proxy Mode](#auth-proxy-mode)
-	- [Web Search Functionality](#web-search-functionality)
-		- [Features](#features)
-		- [Configuration](#configuration)
-		- [Usage](#usage)
-		- [Technical Implementation](#technical-implementation)
-		- [Notes](#notes)
-	- [Frequently Asked Questions](#frequently-asked-questions)
-	- [Contributing](#contributing)
-	- [Sponsorship](#sponsorship)
-	- [License](#license)
+ 	- [Introduction](#introduction)
+ 	- [Roadmap](#roadmap)
+ 	- [Prerequisites](#prerequisites)
+  		- [Node](#node)
+  		- [PNPM](#pnpm)
+  		- [Fill in the Keys](#fill-in-the-keys)
+ 	- [Install Dependencies](#install-dependencies)
+  		- [Backend](#backend)
+  		- [Frontend](#frontend)
+ 	- [Run in Test Environment](#run-in-test-environment)
+  		- [Backend Service](#backend-service)
+  		- [Frontend Webpage](#frontend-webpage)
+ 	- [Packaging](#packaging)
+  		- [Using Docker](#using-docker)
+   			- [Docker Parameter Example](#docker-parameter-example)
+   			- [Docker Build \& Run](#docker-build--run)
+   			- [Docker Compose](#docker-compose)
+  		- [Deployment with Railway](#deployment-with-railway)
+   			- [Railway Environment Variables](#railway-environment-variables)
+  		- [Manual packaging](#manual-packaging)
+   			- [Backend service](#backend-service-1)
+   			- [Frontend webpage](#frontend-webpage-1)
+ 	- [Auth Proxy Mode](#auth-proxy-mode)
+ 	- [Web Search Functionality](#web-search-functionality)
+  		- [Features](#features)
+  		- [Configuration](#configuration)
+  		- [Usage](#usage)
+  		- [Technical Implementation](#technical-implementation)
+  		- [Notes](#notes)
+ 	- [Frequently Asked Questions](#frequently-asked-questions)
+ 	- [Contributing](#contributing)
+ 	- [Sponsorship](#sponsorship)
+ 	- [License](#license)
 
 ## Introduction
 
@@ -99,6 +99,7 @@ Uses the official `OpenAI API` to access `ChatGPT`:
 [Details](https://github.com/Chanzhaoyu/chatgpt-web/issues/138)
 
 Setup:
+
 1. Go to the `service/.env.example` file and copy the contents to the `service/.env` file.
 2. Fill in the `OPENAI_API_KEY` field with your OpenAI API Key [(Get apiKey)](https://platform.openai.com/overview).
 
@@ -111,6 +112,7 @@ For all parameter variables, check [here](#docker-parameter-example) or see:
 ```
 
 ## Roadmap
+
 [✓] Dual models
 
 [✓] Multiple session storage and context logic
@@ -146,7 +148,9 @@ node -v
 ```
 
 ### PNPM
+
 If you have not installed `pnpm` before:
+
 ```shell
 npm install pnpm -g
 ```
@@ -175,12 +179,15 @@ pnpm install
 ```
 
 ### Frontend
+
 Run the following command in the root directory
+
 ```shell
 pnpm bootstrap
 ```
 
 ## Run in Test Environment
+
 ### Backend Service
 
 Enter the `/service` folder and run the following command
@@ -190,7 +197,9 @@ pnpm start
 ```
 
 ### Frontend Webpage
+
 Run the following command in the root directory
+
 ```shell
 pnpm dev
 ```
@@ -284,13 +293,14 @@ services:
 volumes:
   mongodb: {}
 ```
+
 The `OPENAI_API_BASE_URL` is optional and only used when setting the `OPENAI_API_KEY`.
 
 ### Deployment with Railway
 
 [![Deploy on Railway](https://railway.app/button.svg)](https://railway.app/new/template/yytmgc)
 
-> Refer to this issue  https://github.com/Kerwin1202/chatgpt-web/issues/266
+> Refer to this issue  <https://github.com/Kerwin1202/chatgpt-web/issues/266>
 
 > Note: Changing environment variables in Railway will cause re-deployment.
 
@@ -360,12 +370,14 @@ The context window determines the amount of chat history from the current sessio
 #### 2. Usage Scenarios
 
 **Recommended to enable context window when:**
+
 - Need continuous dialogue and context correlation
 - In-depth discussion of complex topics
 - Multi-turn Q&A and step-by-step problem solving
 - Need AI to remember previously mentioned information
 
 **Recommended to disable context window when:**
+
 - Independent simple questions
 - Avoid historical information interfering with new questions
 - Handling multiple unrelated topics
@@ -374,6 +386,7 @@ The context window determines the amount of chat history from the current sessio
 #### 3. Administrator Configuration
 
 Administrators can configure in system settings:
+
 - **Maximum Context Count**: Set the number of context messages included in the conversation
 - **Default State**: Set the default context window state for new conversations
 
@@ -425,19 +438,21 @@ After enabling deep thinking, the model will use more computational resources an
 
 1. **Enter Conversation Interface**: In a conversation session that supports VLLM API
 2. **Find Control Switch**: Locate the "Deep Thinking" toggle button in the conversation interface
-3. **Switch Mode**: 
+3. **Switch Mode**:
    - Enable: Model will perform deep thinking, providing more detailed and in-depth responses
    - Disable: Model will respond directly, faster but potentially more concise
 
 #### 2. Usage Scenarios
 
 **Recommended to enable deep thinking when:**
+
 - Complex problems require in-depth analysis
 - Logical reasoning and multi-step thinking are needed
 - High-quality responses are required
 - Time is not sensitive
 
 **Recommended to disable deep thinking when:**
+
 - Simple questions need quick answers
 - Fast response is required
 - Need to reduce computational costs
@@ -530,12 +545,14 @@ Recommended for current IdP to use OIDC protocol, using [oauth2-proxy](https://o
 #### 3. System Message Templates
 
 **Search Query Extraction Template** (for extracting search keywords from user questions):
+
 ```
 You are a search query extraction assistant. Extract the most relevant search query from user's question and wrap it with <search_query></search_query> tags.
 Current time: {current_time}
 ```
 
 **Search Result Processing Template** (for processing conversations with search results):
+
 ```
 You are a helpful assistant with access to real-time web search results. Use the provided search information to give accurate and up-to-date responses.
 Current time: {current_time}
@@ -583,7 +600,6 @@ Current time: {current_time}
 - Each session can independently control whether to use search functionality
 - The maximum search results setting affects the detail level of search and API costs
 
-
 ## Contributing
 
 Please read the [Contributing Guidelines](./CONTRIBUTING.en.md) before contributing.
@@ -617,4 +633,5 @@ Thanks to [DigitalOcean](https://www.digitalocean.com/) for sponsoring providing
 </p>
 
 ## License
+
 [MIT © github.com/chatgpt-web-dev Contributors](./LICENSE)
